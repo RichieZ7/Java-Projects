@@ -3,25 +3,21 @@ import java.util.Scanner;
 
 public class BullyCalculator {
 
-	Scanner keyboard = new Scanner(System.in);
-	double creditsForClass;
-	int courseType;
-	int numberOfClasses;
-	int gradeInClass;
-	double sumCalculation;
-	double totalCredits;
-	double GPA;
-	double defaultWeight;
-	double actualWeight;
-	boolean isValid;
-	int answer1;
-	double answer2;
+	static Scanner keyboard = new Scanner(System.in);
+	static double creditsForClass;
+	static int courseType;
+	static int numberOfClasses;
+	static int gradeInClass;
+	static double sumCalculation;
+	static double totalCredits;
+	static double GPA;
+	static double defaultWeight;
+	static double actualWeight;
+	static boolean isValid;
+	static int answer1;
+	static double answer2;
 	
-	public BullyCalculator() {
-		
-	}
-	
-	public void validateInput(String startingQuestion, String errorMessage, String errorMessageTwo, String validDataType, double lowerBound, double upperBound) {
+	public static void validateInput(String startingQuestion, String errorMessage, String errorMessageTwo, String validDataType, double lowerBound, double upperBound) {
 		do {
 			System.out.print(startingQuestion + "\n> ");
 			if (validDataType.equals("int")) {
@@ -57,7 +53,7 @@ public class BullyCalculator {
 		} while (!isValid);
 	}
 	
-	public void calculateGPA() {
+	public static void calculateGPA() {
 		validateInput("How many classes are you taking?", "Don't try to outsmart me, that can't be right.", "Invalid input. Put in a number.", "int", 5 , 8 );
 		numberOfClasses = answer1;
 		for (int i = 1; i <= numberOfClasses; i++) {
@@ -93,8 +89,7 @@ public class BullyCalculator {
 	
 	public static void main (String[] args) {
 		System.out.println("Welcome to the BRHS GPA Calculator!");
-		BullyCalculator calculator = new BullyCalculator();
-		calculator.calculateGPA();
+		BullyCalculator.calculateGPA();
 	}
 	
 }
