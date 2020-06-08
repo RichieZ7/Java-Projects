@@ -1,4 +1,3 @@
-// Richard Zhang AP CSP Create Task Project - ATM Software
 // Starting Balance: $2000.50
 // Account Number: 1122334455
 // Account Password: 1234
@@ -30,7 +29,6 @@ public class ATM {
 		System.out.print("Please enter your account number to continue: ");
 		userInputAccountNumber = keyboard.nextInt();
 		if (userInputAccountNumber != accountNumber ) {
-			//tryAgain() is called 
 			tryAgain(accountNumber, 5);
 		}
 	}	
@@ -39,13 +37,10 @@ public class ATM {
 		System.out.print("Please enter your account password to continue: ");
 		userInputPassword = keyboard.nextInt();
 		if (userInputPassword != accountPassword ) {
-			//tryAgain() is called 
 			tryAgain(accountPassword, 3);
 		}
 	}
 	
-	//tryAgain() is the abstraction I will focus on in my written response
-	//it is called from askForAccountNumber() and askForAccountPassword()
 	public void tryAgain(int actualInput, int numberOfTries) {
 		for (int i = 2 ; i <= numberOfTries ; i++) {
 			System.out.println("Sorry that was incorrect, please try again.");
@@ -87,7 +82,6 @@ public class ATM {
 		System.out.println("You have withdrawn $" + userWithdraw);
 	}
 	
-	//giveUserOptions() is the parent algorithm
 	public void giveUserOptions() {
 		boolean userIsFinished = false;
 		while(userIsFinished == false) {
@@ -95,15 +89,12 @@ public class ATM {
 			System.out.print("> ");
 			int userChoice = keyboard.nextInt();
 			if (userChoice == 1) {
-				//checkBalance() is the first child algorithm
 				checkBalance();
 			}
 			else if (userChoice == 2) {
-				//deposit() is the second child algorithm
 				deposit();
 			}
 			else if (userChoice == 3) {
-				//withdraw() is the third child algorithm
 				withdraw();
 			}
 			else if (userChoice == 4) {
